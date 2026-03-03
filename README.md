@@ -1,6 +1,6 @@
 # Flexible Hybrid Reporting Application
 
-A comprehensive Streamlit application for automating HelloFresh's Flexible Hybrid policy compliance tracking and reporting.
+A comprehensive Streamlit application for automating Company's Flexible Hybrid policy compliance tracking and reporting.
 
 ## 📋 Table of Contents
 
@@ -16,7 +16,7 @@ A comprehensive Streamlit application for automating HelloFresh's Flexible Hybri
 
 ## 🎯 Overview
 
-The Flexible Hybrid Reporting Application automates the monthly compliance tracking process for HelloFresh's Flexible Hybrid policy, which requires Non-Essential employees to be in the office for an average of 2.5 days per week.
+The Flexible Hybrid Reporting Application automates the monthly compliance tracking process for Company's Flexible Hybrid policy, which requires Non-Essential employees to be in the office for an average of 2.5 days per week.
 
 **Previous Process:**
 - Manual monthly updates taking 4-6 hours
@@ -211,7 +211,7 @@ APP_ENV=development
 credentials:
   usernames:
     john.doe:
-      email: john.doe@hellofresh.com
+      email: john.doe@Company.com
       name: John Doe
       password: $2b$12$... # Use bcrypt to hash passwords
       role: admin
@@ -230,9 +230,9 @@ print(hashed)
 
 ```yaml
 hrbp_assignments:
-  stephanie.hains@hellofresh.com:
+  stephanie.hains@Company.com:
     - People
-  stephanie.melilli@hellofresh.com:
+  stephanie.melilli@Company.com:
     - Operations
 ```
 
@@ -448,7 +448,7 @@ streamlit run app.py --logger.level=debug
 
 ### Getting Help
 
-- 📧 Email: goat-team@hellofresh.com
+- 📧 Email: goat-team@Company.com
 - 💬 Slack: #flexible-hybrid-support
 - 📖 Check Documentation page in app
 - 🎫 Submit ticket: [Support Portal]
@@ -482,7 +482,7 @@ pytest tests/
 
 ## 📄 License
 
-Internal HelloFresh Application - Proprietary
+Internal Company Application - Proprietary
 
 ## 👥 Authors
 
@@ -524,10 +524,11 @@ Internal HelloFresh Application - Proprietary
 
 For support, please contact:
 
-- **Technical Issues**: goat-team@hellofresh.com
+- **Technical Issues**: goat-team@Company.com
 - **Policy Questions**: Your HRBP
-- **Data Issues**: people-analytics@hellofresh.com
+- **Data Issues**: people-analytics@Company.com
 
 ---
 
 **Built with ❤️ by the GOAT Team**
+
