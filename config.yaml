@@ -1,0 +1,109 @@
+credentials:
+  usernames:
+    # Example user structure - replace with actual users
+    # Password is hashed using bcrypt
+    # Use: import bcrypt; bcrypt.hashpw('password'.encode(), bcrypt.gensalt()).decode()
+    admin:
+      email: admin@hellofresh.com
+      name: Admin User
+      password: $2b$12$placeholder_hash_replace_with_real_hash
+      role: admin
+    
+cookie:
+  expiry_days: 30
+  key: flexible_hybrid_auth_key_change_this
+  name: flexible_hybrid_cookie
+
+# Role-based access control
+roles:
+  admin:
+    label: Admin/HRBP
+    permissions:
+      - view_all_org
+      - view_all_departments
+      - manage_exceptions
+      - manage_classifications
+      - export_data
+      - view_disciplinary
+  
+  hrbp:
+    label: HRBP
+    permissions:
+      - view_assigned_departments
+      - manage_exceptions
+      - export_data
+      - view_disciplinary
+  
+  manager:
+    label: Manager
+    permissions:
+      - view_own_team
+      - export_own_team
+  
+  employee:
+    label: Employee
+    permissions:
+      - view_own_data
+
+# Department to HRBP mapping
+hrbp_assignments:
+  stephanie.hains@hellofresh.com:
+    - People
+  stephanie.melilli@hellofresh.com:
+    - Operations
+  pablo.velez@hellofresh.com:
+    - Meal Kits
+
+# Flexible Hybrid schedule configuration
+flex_schedule:
+  # 2026 Flexible Hybrid Calendar
+  months:
+    "2026-01":
+      start_date: "2026-01-05"
+      end_date: "2026-02-01"
+      weeks: 4
+      days_possible: 20
+    "2026-02":
+      start_date: "2026-02-02"
+      end_date: "2026-03-01"
+      weeks: 4
+      days_possible: 20
+    "2026-03":
+      start_date: "2026-03-02"
+      end_date: "2026-04-05"
+      weeks: 5
+      days_possible: 25
+    "2026-04":
+      start_date: "2026-04-06"
+      end_date: "2026-05-03"
+      weeks: 4
+      days_possible: 20
+    "2026-05":
+      start_date: "2026-05-04"
+      end_date: "2026-05-31"
+      weeks: 4
+      days_possible: 20
+    "2026-06":
+      start_date: "2026-06-01"
+      end_date: "2026-06-28"
+      weeks: 4
+      days_possible: 20
+  
+  # Compliance threshold
+  compliance_threshold: 2.5
+  
+  # Schedule types and their expected averages
+  schedule_types:
+    "Mon - Fri, 8 Hour Days (Default)": 2.5
+    "FLEX - Schedule Varies - 10 Hours": 2.0
+
+# Company holidays (will be dynamically loaded from Snowflake in production)
+company_holidays:
+  "2026-01-01": "New Year's Day"
+  "2026-05-25": "Memorial Day"
+  "2026-07-03": "Independence Day (Observed)"
+  "2026-09-07": "Labor Day"
+  "2026-11-26": "Thanksgiving"
+  "2026-11-27": "Day after Thanksgiving"
+  "2026-12-24": "Christmas Eve"
+  "2026-12-25": "Christmas Day"
